@@ -1,17 +1,22 @@
 name: CI/CD Canary Deployment
 
+
 on:
   push:
     branches: [ "main" ]
+
+
 
 jobs:
   canary-deploy:
     runs-on: self-hosted
     
+
     steps:
     - name: 📥 최신 코드 받아오기
       uses: actions/checkout@v3
       
+
     - name: 🐦 카나리 배포 스크립트 실행!
       run: bash ./deploy.sh
 

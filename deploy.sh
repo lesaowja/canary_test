@@ -45,7 +45,7 @@ RESPONSE=$(docker exec nginx-proxy sh -c "wget -qO- http://app-$TARGET:${TARGET_
 if [ -z "$RESPONSE" ]; then
     echo "❌ 실패! 새 서버가 제대로 켜지지 않았습니다. 롤백합니다."
     docker rm -f app-$TARGET
-    exit 1
+    exit 1  
 fi
 
 # ==========================================
